@@ -1,0 +1,4 @@
+LIBRARY imageProcessingOuterComponent
+EXPORTS
+	DllGetClassObject PRIVATE
+	DLLCanUnloadNow PRIVATE

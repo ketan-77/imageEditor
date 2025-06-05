@@ -1,0 +1,10 @@
+^D:\OK\WIN32_DATA\WIN32\04-PROJECT\IMAGEPROCESSING\IMAGEEDITOR\IMAGEPROCESSING_CLIENT\BUILD_VS\CMAKEFILES\3FA7E4D4E43DF3B12219F17D4DD01D59\GENERATE.STAMP.RULE
+setlocal
+C:\msys64\mingw64\bin\cmake.exe -SD:/ok/win32_data/Win32/04-Project/imageProcessing/imageEditor/imageProcessing_client -BD:/ok/win32_data/Win32/04-Project/imageProcessing/imageEditor/imageProcessing_client/build_vs --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/ok/win32_data/Win32/04-Project/imageProcessing/imageEditor/imageProcessing_client/build_vs/Win32App.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

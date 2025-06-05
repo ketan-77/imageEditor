@@ -1,0 +1,10 @@
+^D:\OK\WIN32_DATA\WIN32\04-PROJECT\IMAGEPROCESSING\IMAGEEDITOR\IMAGEPROCESSING_INNER\CMAKELISTS.TXT
+setlocal
+C:\msys64\mingw64\bin\cmake.exe -SD:/ok/win32_data/Win32/04-Project/imageProcessing/imageEditor/imageProcessing_inner -BD:/ok/win32_data/Win32/04-Project/imageProcessing/imageEditor/imageProcessing_inner/build --check-stamp-file D:/ok/win32_data/Win32/04-Project/imageProcessing/imageEditor/imageProcessing_inner/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

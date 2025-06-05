@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\ok\win32_data\Win32\04-Project\imageProcessing\imageEditor\imageProcessing_inner\imageProcessingInnerComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\ok\win32_data\Win32\04-Project\imageProcessing\imageEditor\imageProcessing_inner\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9BB784A2-E569-3E21-9343-DE1D4BC1AAF6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

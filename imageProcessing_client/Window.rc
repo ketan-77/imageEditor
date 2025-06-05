@@ -1,0 +1,101 @@
+#include "./includes/window.h"
+#include <Windows.h>
+
+// Define your icon resource
+KSM_ICON ICON "Icon1.ico"
+
+//Register DB
+DB_REGISTER DIALOG 0, 1, 250, 90
+STYLE DS_MODALFRAME | DS_CENTER | WS_CAPTION | WS_SYSMENU
+CAPTION "REGISTER"
+BEGIN
+        LTEXT           "Enter Name:", IDC_STATIC_AGE, 20, 35, 50, 20
+        EDITTEXT        IDC_FIRST_NAME, 70, 30, 50, 15, ES_AUTOHSCROLL
+        EDITTEXT        IDC_MIDDLE_NAME, 130, 30, 50, 15, ES_AUTOHSCROLL
+        EDITTEXT        IDC_LAST_NAME, 190, 30, 50, 15, ES_AUTOHSCROLL
+        
+        LTEXT           "First Name", IDC_STATIC_FN, 70, 45, 50, 20
+        LTEXT           "Middle Name", IDC_STATIC_MN, 130, 45, 50, 20
+        LTEXT           "Last Name", IDC_STATIC_LN, 190, 45, 50, 20
+        
+       PUSHBUTTON "REGISTER", IDREGISTER, 115, 65, 40, 15
+END
+
+
+// Edit --> Edit 
+DB_EDIT DIALOG 0, 1, 380, 300
+STYLE DS_MODALFRAME | DS_CENTER | WS_CAPTION | WS_SYSMENU
+CAPTION "EDIT"
+BEGIN
+    PUSHBUTTON "REGISTER USER", REGUSR_PB, 10, 10, 75, 15
+
+    //Groub box for image editor
+    GROUPBOX        "IMAGE EDITOR", EDITOR_GROUPBOX, 10, 30, 350, 120, BS_GROUPBOX
+        RADIOBUTTON         "EDIT IMAGE", EDIT_RADIO_BUTTON, 20, 50, 70, 20
+    
+            GROUPBOX        "DESATURATION", DESATURATION_GROUPBOX, 20, 75, 105, 55, BS_GROUPBOX
+                PUSHBUTTON "APPLY EFFECT", DES_PB1, 35, 90, 70, 15
+                PUSHBUTTON "RESET IMAGE", DES_PB2, 35, 110, 70, 15
+
+            GROUPBOX        "SEPIA", SEPIA_GROUPBOX, 130, 75, 105, 55, BS_GROUPBOX
+                PUSHBUTTON "APPLY EFFECT", SEP_PB1, 145, 90, 70, 15
+                PUSHBUTTON "RESET IMAGE", SEP_PB2, 145, 110, 70, 15
+                
+            GROUPBOX        "INVERSION", INVERSION_GROUPBOX, 240, 75, 105, 55, BS_GROUPBOX
+                PUSHBUTTON "APPLY EFFECT", INV_PB1, 255, 90, 70, 15
+                PUSHBUTTON "RESET IMAGE", INV_PB2, 255, 110, 70, 15
+                
+    //Groub box for color picker
+    GROUPBOX        "COLOR PICKER", COLORPICK_GROUPBOX, 10, 155, 350, 120, BS_GROUPBOX
+        RADIOBUTTON         "PICK COLOR", PICK_RADIO_BUTTON, 20, 170, 70, 20
+        
+        LTEXT           "Picked Color:", IDC_STATIC_AGE, 20, 202, 70, 20
+        EDITTEXT        IDC_EDIT_R, 90, 200, 50, 10, ES_AUTOHSCROLL
+        EDITTEXT        IDC_EDIT_G, 150, 200, 50, 10, ES_AUTOHSCROLL
+        EDITTEXT        IDC_EDIT_B, 210, 200, 50, 10, ES_AUTOHSCROLL
+        CONTROL "", IDC_COLOR_BOX, "Static", SS_OWNERDRAW | WS_CHILD | WS_VISIBLE, 280, 185, 35, 35
+        
+        LTEXT           "R", IDC_STATIC_R, 115, 220, 50, 20
+        LTEXT           "G", IDC_STATIC_G, 175, 220, 50, 20
+        LTEXT           "B", IDC_STATIC_B, 235, 220, 50, 20
+        
+        
+        CHECKBOX           "Export Picked Colors in Log File", IDC_CHECKB_1, 20, 230, 150, 20
+        CHECKBOX           "Export Picked Colors[Normalize] in Log File", IDC_CHECKB_2, 20, 240, 160, 20
+        
+
+
+    PUSHBUTTON "OK", IDOK, 200, 280, 40, 15
+    PUSHBUTTON "EXIT", IDEXIT, 250, 280, 40, 15
+    PUSHBUTTON "ABOUT", IDABOUT, 300, 280, 40, 15
+END
+
+// Help --> About 
+DB_ABOUT DIALOG 0, 1, 220, 110
+STYLE DS_MODALFRAME | DS_CENTER | WS_CAPTION | WS_SYSMENU
+CAPTION "ABOUT"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "", IDC_STATIC_ICON, "STATIC", SS_ICON | WS_VISIBLE | WS_CHILD, 15, 12, 25, 25
+    PUSHBUTTON      "OK", IDOK, 100, 85, 30, 10
+END
+
+//Menu bar
+MYMENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open", IDM_OPEN
+        MENUITEM "&Exit", IDM_EXIT
+    END
+
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Edit", IDM_EDIT
+    END
+
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About", IDM_ABOUT
+    END
+END

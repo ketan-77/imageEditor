@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\CLSID\{6AB99B8D-F77E-4F2B-ACA1-8EEFBD9C5B8F}]
+@="ImageProcessing_Inner_Server"
+[HKEY_CLASSES_ROOT\CLSID\{6AB99B8D-F77E-4F2B-ACA1-8EEFBD9C5B8F}\InprocServer32]
+@="C:\\Windows\\System32\\imageProcessingInnerComponent.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{964866E5-7D21-4486-B628-99B212A06AE2}]
+@="imageProcessingOuterComponent"
+[HKEY_CLASSES_ROOT\CLSID\{964866E5-7D21-4486-B628-99B212A06AE2}\InprocServer32]
+@="C:\\Windows\\System32\\imageProcessingOuterComponent.dll"
+
+
+
