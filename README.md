@@ -28,10 +28,12 @@ The project is split into three parts:
 > Ensure you are using the **x64 Native Tools Command Prompt for Visual Studio** and have **CMake** installed.
 
 ---
+### ✅ App Building stages
 
-### ✅ Step 1: Build the Outer Component
 
 ```sh
+### ✅ Step 1: Build the Outer Component
+
 cd imageProcessing_outerComponent
 mkdir build && cd build
 cmake -G "Visual Studio 17 2022" -A x64 ..
@@ -46,6 +48,8 @@ mkdir build && cd build
 cmake -G "Visual Studio 17 2022" -A x64 ..
 cmake --build . --config Release
 copy ..\build\Release\imageProcessingInnerComponent.dll C:\Windows\System32\
+regedit /s imageProcessingInnerComponent.reg
+
 
 ### ✅ Step 3: Build the Client Application
 cd ../../imageProcessing_client
